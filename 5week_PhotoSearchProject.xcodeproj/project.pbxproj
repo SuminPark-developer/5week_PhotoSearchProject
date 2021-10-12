@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,13 @@
 		7469E3842715B93000D7D2B9 /* _week_PhotoSearchProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7469E3822715B93000D7D2B9 /* _week_PhotoSearchProject.xcdatamodeld */; };
 		7469E3862715B93100D7D2B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7469E3852715B93100D7D2B9 /* Assets.xcassets */; };
 		7469E3892715B93100D7D2B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7469E3872715B93100D7D2B9 /* LaunchScreen.storyboard */; };
+		7469E39E2715D2C500D7D2B9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7469E39D2715D2C500D7D2B9 /* SecondViewController.swift */; };
+		B00BA7A7BF1A07DBBD2B01DA /* Pods_5week_PhotoSearchProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB029E4C865EB2A38E24F83 /* Pods_5week_PhotoSearchProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37010B7AA1A03C1D24BE311D /* Pods-5week_PhotoSearchProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-5week_PhotoSearchProject.debug.xcconfig"; path = "Target Support Files/Pods-5week_PhotoSearchProject/Pods-5week_PhotoSearchProject.debug.xcconfig"; sourceTree = "<group>"; };
+		383EE74E8B4DBE9EA15AC6C1 /* Pods-5week_PhotoSearchProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-5week_PhotoSearchProject.release.xcconfig"; path = "Target Support Files/Pods-5week_PhotoSearchProject/Pods-5week_PhotoSearchProject.release.xcconfig"; sourceTree = "<group>"; };
 		7469E3762715B93000D7D2B9 /* 5week_PhotoSearchProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5week_PhotoSearchProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7469E3792715B93000D7D2B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7469E37B2715B93000D7D2B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		7469E3852715B93100D7D2B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7469E3882715B93100D7D2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7469E38A2715B93100D7D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7469E39D2715D2C500D7D2B9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8BB029E4C865EB2A38E24F83 /* Pods_5week_PhotoSearchProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_5week_PhotoSearchProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00BA7A7BF1A07DBBD2B01DA /* Pods_5week_PhotoSearchProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				7469E3782715B93000D7D2B9 /* 5week_PhotoSearchProject */,
 				7469E3772715B93000D7D2B9 /* Products */,
+				9947AC7D1D5B709799C52D3A /* Pods */,
+				9BB654C0AE26787F991AC2E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +75,26 @@
 				7469E3872715B93100D7D2B9 /* LaunchScreen.storyboard */,
 				7469E38A2715B93100D7D2B9 /* Info.plist */,
 				7469E3822715B93000D7D2B9 /* _week_PhotoSearchProject.xcdatamodeld */,
+				7469E39D2715D2C500D7D2B9 /* SecondViewController.swift */,
 			);
 			path = 5week_PhotoSearchProject;
+			sourceTree = "<group>";
+		};
+		9947AC7D1D5B709799C52D3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37010B7AA1A03C1D24BE311D /* Pods-5week_PhotoSearchProject.debug.xcconfig */,
+				383EE74E8B4DBE9EA15AC6C1 /* Pods-5week_PhotoSearchProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9BB654C0AE26787F991AC2E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BB029E4C865EB2A38E24F83 /* Pods_5week_PhotoSearchProject.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7469E38D2715B93100D7D2B9 /* Build configuration list for PBXNativeTarget "5week_PhotoSearchProject" */;
 			buildPhases = (
+				69947C1C92FAB00555B645BF /* [CP] Check Pods Manifest.lock */,
 				7469E3722715B93000D7D2B9 /* Sources */,
 				7469E3732715B93000D7D2B9 /* Frameworks */,
 				7469E3742715B93000D7D2B9 /* Resources */,
+				C5985E2D86F51B0A862227C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +164,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		69947C1C92FAB00555B645BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-5week_PhotoSearchProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5985E2D86F51B0A862227C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-5week_PhotoSearchProject/Pods-5week_PhotoSearchProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-5week_PhotoSearchProject/Pods-5week_PhotoSearchProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-5week_PhotoSearchProject/Pods-5week_PhotoSearchProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7469E3722715B93000D7D2B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,6 +214,7 @@
 				7469E37E2715B93000D7D2B9 /* ViewController.swift in Sources */,
 				7469E37A2715B93000D7D2B9 /* AppDelegate.swift in Sources */,
 				7469E3842715B93000D7D2B9 /* _week_PhotoSearchProject.xcdatamodeld in Sources */,
+				7469E39E2715D2C500D7D2B9 /* SecondViewController.swift in Sources */,
 				7469E37C2715B93000D7D2B9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +278,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -267,6 +340,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -278,6 +352,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -287,6 +362,7 @@
 		};
 		7469E38E2715B93100D7D2B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37010B7AA1A03C1D24BE311D /* Pods-5week_PhotoSearchProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +382,7 @@
 		};
 		7469E38F2715B93100D7D2B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 383EE74E8B4DBE9EA15AC6C1 /* Pods-5week_PhotoSearchProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
