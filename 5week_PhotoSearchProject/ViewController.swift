@@ -14,18 +14,25 @@ import NaverThirdPartyLogin
 
 class ViewController: UIViewController, NaverThirdPartyLoginConnectionDelegate {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var id: UILabel!
-    
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
     override func viewDidLoad() {
 //        super.viewDidLoad()
         loginInstance?.delegate = self
+        
+        loginInstance?.requestDeleteToken() // 앱 시작시, 네이버 로그아웃
     }
 
+    // VC에선 네비게이션바 안보이게 설정.
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
+//    // SecondVC에선 네비게이션바가 보이게 설정.
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//    }
 
+    // 카카오 로그인 버튼 클릭 시,
     @IBAction func didTapKakaoLoginBtn(_ sender: UIButton) {
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
@@ -37,31 +44,36 @@ class ViewController: UIViewController, NaverThirdPartyLoginConnectionDelegate {
                 //do something
                 _ = oauthToken
                 
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC")
-                self.present(vc!, animated: true, completion: nil)
+                let accessToken = oauthToken?.accessToken // 어세스 토큰
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as? SecondViewController
+                vc?.loginMethod = "Kakao"
+                self.navigationController?.pushViewController(vc!, animated: true)
                 
             }
             
         }
     }
     
-    // 로그인에 성공한 경우 호출
+    // 네이버 로그인 - 성공한 경우 호출
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         print("Success login")
-        getInfo()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as? SecondViewController
+        vc?.loginMethod = "Naver"
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
-    // referesh token
+    // 네이버 로그인 - referesh token
     func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
         loginInstance?.accessToken
     }
     
-    // 로그아웃
+    // 네이버 로그인 -  로그아웃
     func oauth20ConnectionDidFinishDeleteToken() {
         print("log out")
     }
     
-    // 모든 error
+    // 네이버 로그인 -  모든 error
     func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
         print("error = \(error.localizedDescription)")
     }
@@ -72,39 +84,6 @@ class ViewController: UIViewController, NaverThirdPartyLoginConnectionDelegate {
     
     @IBAction func logout(_ sender: Any) {
         loginInstance?.requestDeleteToken()
-    }
-    
-    // RESTful API, id가져오기
-    func getInfo() {
-      guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
-      
-      if !isValidAccessToken {
-        return
-      }
-      
-      guard let tokenType = loginInstance?.tokenType else { return }
-      guard let accessToken = loginInstance?.accessToken else { return }
-        
-      let urlStr = "https://openapi.naver.com/v1/nid/me"
-      let url = URL(string: urlStr)!
-      
-      let authorization = "\(tokenType) \(accessToken)"
-      
-      let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
-      
-      req.responseJSON { response in
-        guard let result = response.value as? [String: Any] else { return }
-        guard let object = result["response"] as? [String: Any] else { return }
-        guard let name = object["name"] as? String else { return }
-        guard let email = object["email"] as? String else { return }
-        guard let id = object["id"] as? String else {return}
-        
-        print(email)
-        
-        self.nameLabel.text = "\(name)"
-        self.emailLabel.text = "\(email)"
-        self.id.text = "\(id)"
-      }
     }
     
     
